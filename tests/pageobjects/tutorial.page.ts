@@ -1,4 +1,5 @@
 import { IonicButton, IonicSlides } from '../helpers';
+import { IonicDateTime } from '../helpers/ionic/components/datetime';
 import Page from './page';
 
 class Tutorial extends Page {
@@ -10,6 +11,10 @@ class Tutorial extends Page {
   }
   get continueButton() {
     return IonicButton.withTitle('Continue');
+  }
+
+  get dateTime() {
+    return new IonicDateTime('ion-datetime');
   }
 
   async swipeLeft() {
