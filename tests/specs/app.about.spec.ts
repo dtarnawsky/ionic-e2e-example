@@ -10,7 +10,7 @@ describe('About', () => {
     await pause(500);
   });
 
-  it('Should switch location', async () => {
+  it('Should switch to about', async () => {
     const location = await About.locationSelect;
 
     await location.open();
@@ -18,10 +18,15 @@ describe('About', () => {
     await location.ok();
     const austinImage = await About.austinImage;
     await pause(500);
-    await expect((await austinImage.getCSSProperty('opacity')).value).toEqual(
-      1
-    );
-
+    await expect((await austinImage.getCSSProperty('opacity')).value).toEqual(1);
+  });
+  it('Should check terms and conditions', async () => {
+    const termsAndConditionsCheckBox = await About.termsAndConditionsCheckBox;
+    await termsAndConditionsCheckBox.setValue(true);
+    const value = await termsAndConditionsCheckBox.getValue();
+    await expect(value).toEqual(true);
+  });
+  it('Should switch location', async () => {
     await location.open();
     await location.select(2);
     await location.ok();

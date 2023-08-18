@@ -1,4 +1,5 @@
 import { Ionic$, IonicButton, IonicSelect } from '../helpers';
+import { IonicCheckBox } from '../helpers/ionic/components/checkbox';
 
 import Page from './page';
 
@@ -11,6 +12,9 @@ class About extends Page {
   }
   get madisonImage() {
     return Ionic$.$('.madison');
+  }
+  get termsAndConditionsCheckBox() {
+    return new IonicCheckBox('ion-checkbox');
   }
   get austinImage() {
     return Ionic$.$('.austin');
