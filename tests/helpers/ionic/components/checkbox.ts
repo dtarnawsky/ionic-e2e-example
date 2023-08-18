@@ -23,12 +23,5 @@ export class IonicCheckBox extends IonicComponent {
     const el = await Ionic$.$(this.selector as string);
     await el.waitForDisplayed({ timeout: visibilityTimeout });
     return await el.getProperty('checked');
-    const ionTags = ['ion-checkbox'];
-    if (ionTags.indexOf(await el.getTagName()) >= 0) {
-      const input = await el.$('input.aux-input');
-      return input.getValue();
-    } else {
-      return el.getValue();
-    }
   }
 }
